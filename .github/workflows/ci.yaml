@@ -26,22 +26,7 @@ jobs:
     steps:
     - name: Repository checkout
       uses: actions/checkout@v2
-    - name: Lint
-      run: swiftlint
-    - name: Set Default Scheme
-      run: |
-        scheme_list=$(xcodebuild -list -json | tr -d "\n")
-        default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
-        echo $default | cat >default
-        echo Using default scheme: $default
-    - name: Build for iOS
-      env:
-        scheme: ${{ 'default' }}
-      run: |
-        set -o pipefail && env NSUnbufferedIO=YES xcodebuild build-for-testing -scheme "IOSEX" -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
-    - name: Run iOS tests
-      env:
-        scheme: ${{ 'default' }}
-      run: |
-        set -o pipefail && env NSUnbufferedIO=YES xcodebuild test-without-building -scheme "IOSEX" -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
-
+    - name: Build
+      run: swift build
+    - name: Run tests 
+      run: swift test
