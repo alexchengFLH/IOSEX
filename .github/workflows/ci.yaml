@@ -38,10 +38,10 @@ jobs:
       env:
         scheme: ${{ 'default' }}
       run: |
-        set -o pipefail && env NSUnbufferedIO=YES xcodebuild build-for-testing -scheme ${{ env.<scheme> }} -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
+        set -o pipefail && env NSUnbufferedIO=YES xcodebuild build-for-testing -scheme "IOSEX" -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
     - name: Run iOS tests
       env:
         scheme: ${{ 'default' }}
       run: |
-        set -o pipefail && env NSUnbufferedIO=YES xcodebuild test-without-building -scheme ${{ env.<scheme> }} -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
+        set -o pipefail && env NSUnbufferedIO=YES xcodebuild test-without-building -scheme "IOSEX" -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
 
