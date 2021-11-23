@@ -7,7 +7,7 @@ final class IOSEXTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
 //        XCTAssertEqual(IOSEX().text, "Hello, World!")
-        let a=1
+        let a=2
         let b=2
         XCTAssert(a == b,"check a == b")
     }
