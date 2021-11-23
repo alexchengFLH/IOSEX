@@ -14,8 +14,8 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FADAD1CE274B6BD400609C06"
-               BuildableName = "IOSEX.app"
+               BlueprintIdentifier = "IOSEX::IOSEX"
+               BuildableName = "IOSEX.framework"
                BlueprintName = "IOSEX"
                ReferencedContainer = "container:IOSEX.xcodeproj">
             </BuildableReference>
@@ -32,7 +32,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "FADAD1E4274B6BD500609C06"
+               BlueprintIdentifier = "IOSEX::IOSEXTests"
                BuildableName = "IOSEXTests.xctest"
                BlueprintName = "IOSEXTests"
                ReferencedContainer = "container:IOSEX.xcodeproj">
@@ -64,8 +64,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FADAD1CE274B6BD400609C06"
-            BuildableName = "IOSEX.app"
+            BlueprintIdentifier = "IOSEX::IOSEX"
+            BuildableName = "IOSEX.framework"
             BlueprintName = "IOSEX"
             ReferencedContainer = "container:IOSEX.xcodeproj">
          </BuildableReference>
@@ -81,8 +81,8 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "FADAD1CE274B6BD400609C06"
-            BuildableName = "IOSEX.app"
+            BlueprintIdentifier = "IOSEX::IOSEX"
+            BuildableName = "IOSEX.framework"
             BlueprintName = "IOSEX"
             ReferencedContainer = "container:IOSEX.xcodeproj">
          </BuildableReference>
