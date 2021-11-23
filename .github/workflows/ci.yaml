@@ -3,10 +3,15 @@ on:
   push:
 
 env:
-  DEVELOPER_DIR: /Applications/Xcode_13.0.app
+    DEVELOPER_DIR: /Applications/Xcode_13.0.app
 jobs:
-  Build:
+  Deploy:
     runs-on: macos-11
+    if: github.event.pull_request.merged == true && github.event.pull_request.user.login == '<user_name>'
     steps:
       - name: Checkout
         uses: actions/checkout@v2
+      - name: Run tests
+        run: xcodebuild clean test 
+          -scheme <scheme_name> -sdk iphonesimulator
+          -destination 'platform=iOS Simulator,name=iPhone 13'
