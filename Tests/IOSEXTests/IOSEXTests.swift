@@ -7,6 +7,8 @@ final class IOSEXTests: XCTestCase {
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
 //        XCTAssertEqual(IOSEX().text, "Hello, World!")
-        XCTAssert(true,"test pass")
+        var a=1
+        var b=2
+        XCTAssert(a == b,"test pass")
     }
 }
