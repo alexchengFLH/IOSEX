@@ -24,5 +24,5 @@ jobs:
         echo Using default scheme: $default
     - name: Run tests
       run: xcodebuild clean test
-        -scheme <default> -sdk iphonesimulator
+        -scheme $default -sdk iphonesimulator
         -destination 'platform=iOS Simulator,name=iPhone 13'
