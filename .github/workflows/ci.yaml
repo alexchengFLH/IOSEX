@@ -35,6 +35,12 @@ jobs:
         echo $default | cat >default
         echo Using default scheme: $default
     - name: Build for iOS
-      run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild build-for-testing -scheme $default -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
+      env:
+        scheme: ${{ 'default' }}
+      run: |
+        if [ $scheme = default ]; then scheme=$(cat default); fi
+        set -o pipefail && env NSUnbufferedIO=YES xcodebuild build-for-testing -scheme "$scheme" -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
     - name: Run iOS tests
-      run: set -o pipefail && env NSUnbufferedIO=YES xcodebuild test-without-building -scheme $default -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
+      run: |
+        if [ $scheme = default ]; then scheme=$(cat default); fi
+        set -o pipefail && env NSUnbufferedIO=YES xcodebuild test-without-building -scheme "$scheme" -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
