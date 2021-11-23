@@ -1,16 +1,28 @@
-name: CI
+name: Swift
+
 on:
   push:
+    branches: [ devp2 ]
+  pull_request:
+    branches: [ devp2 ]
 
-env:
-    DEVELOPER_DIR: /Applications/Xcode_13.0.app
 jobs:
-  Deploy:
-    runs-on: macos-11
+  build:
+
+    runs-on: macos-latest
+
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-      - name: Run tests
-        run: xcodebuild clean test 
-          -scheme <scheme_name> -sdk iphonesimulator
-          -destination 'platform=iOS Simulator,name=iPhone 13'
+    - uses: actions/checkout@v2
+    - name: Install Dependencies
+      run: |
+       pod install --repo-update
+    - name: Set Default Scheme
+      run: |
+        scheme_list=$(xcodebuild -list -json | tr -d "\n")
+        default=$(echo $scheme_list | ruby -e "require 'json'; puts JSON.parse(STDIN.gets)['project']['targets'][0]")
+        echo $default | cat >default
+        echo Using default scheme: $default
+    - name: Run tests
+      run: xcodebuild clean test
+        -scheme <scheme_name> -sdk iphonesimulator
+        -destination 'platform=iOS Simulator,name=iPhone 13'
