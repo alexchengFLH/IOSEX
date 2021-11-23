@@ -44,4 +44,4 @@ jobs:
         scheme: ${{ 'default' }}
       run: |
         set -o pipefail && env NSUnbufferedIO=YES xcodebuild test-without-building -scheme ${{ env.<scheme> }} -destination "platform=iOS Simulator,OS=latest,name=iPhone 12" | xcpretty
-${{ env.<variable_name> }}
+
