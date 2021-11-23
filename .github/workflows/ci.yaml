@@ -2,9 +2,9 @@ name: ci
 
 on:
   push:
-    branches: [ devp2 ]
+    branches: [ main ]
   pull_request:
-    branches: [ devp2 ]
+    branches: [ main ]
 
 #jobs:
 #  build:
