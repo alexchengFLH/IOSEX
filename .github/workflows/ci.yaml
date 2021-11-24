@@ -27,7 +27,7 @@ jobs:
       DEVELOPER_DIR: /Applications/Xcode_12.app/Contents/Developer
     steps:
     - uses: actions/checkout@v2
-    - name: Force Xcode 11
+    - name: Force Xcode 12
       run: sudo xcode-select -switch /Applications/Xcode_12.app
     - name: Build
       run: swift build -v
