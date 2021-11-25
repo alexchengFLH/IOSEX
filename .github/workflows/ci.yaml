@@ -34,31 +34,6 @@ jobs:
     - name: Run tests
       run: swift test -v
     - name: iOS build setup
-<<<<<<< HEAD
-        run: >-
-          xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
-          -scheme IOSEX -destination 'platform=iOS Simulator,name=iPhone
-          11,OS=13.7'
-      - name: testing ... iPhone 11
-        run: >-
-          xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
-          -scheme IOSEX -destination 'platform=iOS Simulator,name=iPhone
-          11,OS=13.7'
-      - name: testing ... iPhone 11 Pro Max
-        run: >-
-          xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
-          -scheme IOSEX -destination 'platform=iOS Simulator,name=iPhone 11
-          Pro Max,OS=13.7'
-      - name: testing ... iPad Air
-        run: >-
-          xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
-          -scheme IOSEX -destination 'platform=iOS Simulator,name=iPad Air
-          (3rd generation),OS=13.7'
-      - name: testing ... iPad Pro 12.9
-        run: >-
-          xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
-          -scheme IOSEX -destination 'platform=iOS Simulator,name=iPad Pro (12.9-inch) (4th generation),OS=13.7'
-=======
       run: |
           xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
           -scheme IOSEX -destination 'platform=iOS Simulator,name=iPhone
@@ -82,4 +57,3 @@ jobs:
       run: |
         xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
         -scheme IOSEX -destination 'platform=iOS Simulator,name=iPad Pro (12.9-inch) (4th generation),OS=13.7'
->>>>>>> 430b9828b09432fbe46adbfaf4a681c7a00dd2a2
