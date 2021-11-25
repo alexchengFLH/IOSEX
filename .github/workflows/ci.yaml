@@ -34,26 +34,26 @@ jobs:
     - name: Run tests
       run: swift test -v
     - name: iOS build setup
-        run: >-
+        run: |
           xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
           -scheme IOSEX -destination 'platform=iOS Simulator,name=iPhone
           11,OS=13.7'
       - name: testing ... iPhone 11
-        run: >-
+        run: |
           xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
           -scheme IOSEX -destination 'platform=iOS Simulator,name=iPhone
           11,OS=13.7'
       - name: testing ... iPhone 11 Pro Max
-        run: >-
+        run: |
           xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
           -scheme IOSEX -destination 'platform=iOS Simulator,name=iPhone 11
           Pro Max,OS=13.7'
       - name: testing ... iPad Air
-        run: >-
+        run: |
           xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
           -scheme IOSEX -destination 'platform=iOS Simulator,name=iPad Air
           (3rd generation),OS=13.7'
       - name: testing ... iPad Pro 12.9
-        run: >-
+        run: |
           xcodebuild test -workspace IOSEX.xcodeproj/project.xcworkspace
           -scheme IOSEX -destination 'platform=iOS Simulator,name=iPad Pro (12.9-inch) (4th generation),OS=13.7'
