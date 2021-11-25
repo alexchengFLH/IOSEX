@@ -34,6 +34,6 @@ jobs:
 #     - name: Run tests
 #       run: swift test -v
     - name: Build and test
-      run: xcodebuild clean build test -workspace App/IOSEX.xcworkspace -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
+      run: xcodebuild clean build test -workspace IOSEX/IOSEX.xcworkspace -scheme "CI" -sdk iphonesimulator -destination "platform=iOS Simulator,name=iPhone 11" ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO
 
 #        -scheme $default -sdk iphonesimulator
