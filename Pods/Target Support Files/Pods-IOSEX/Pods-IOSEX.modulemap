@@ -1,0 +1,6 @@
+framework module Pods_IOSEX {
+  umbrella header "Pods-IOSEX-umbrella.h"
+
+  export *
+  module * { export * }
+}
